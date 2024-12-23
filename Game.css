@@ -1,0 +1,103 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(66, 66, 66);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;    
+    color:#fff;
+    font-family: Tahoma, sans-serif;
+}
+
+.goback {
+    position: fixed;
+    top: 3%;
+    left: 5%;
+}
+
+.goback a {
+    color: #fff;
+    font-size: 3rem;
+    text-decoration: none;
+    font-weight: bolder;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.scoreContainer {
+    position: fixed;
+    top: 4%;
+    right: 5%;
+}
+
+
+.scoreContainer h2 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.gameContainer {
+    width: 700px;
+    height: 500px;
+    padding-top: 3em;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.card img {
+    width: 100px;
+    height: 110px;
+}
+
+
+.card {
+    width: 15%;
+    height: 23%;
+    margin: 5px;
+    margin-left: 0;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.card:active {
+    transform: scale(0.95);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.front, .back {
+    background-color: #807f7f;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
